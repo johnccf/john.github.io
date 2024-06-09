@@ -64,7 +64,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'webappprod'
-          slot-name: 'Production'
-          package: .
+         app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+         resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
+    
           
