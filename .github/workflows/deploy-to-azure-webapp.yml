@@ -13,7 +13,7 @@ on:
       - develop
 
 env:
-  AZURE_WEBAPP_NAME: fe-app-dev
+  AZURE_WEBAPP_NAME: webappprod
   NODE_VERSION: 20.x
 
 permissions:
