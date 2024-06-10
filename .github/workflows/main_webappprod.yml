@@ -67,5 +67,5 @@ jobs:
          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
          resource-group-name: ${{ secrets.AZURE_RESOURCE_GROUP }}
          slot-name: 'production'
-    
+         package: package.zip
           
