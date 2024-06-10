@@ -68,7 +68,7 @@ jobs:
 
       - name: Check Web App properties
         run: |
-          az webapp show --name ${AZURE_WEBAPP_NAME} --resource-group ${AZURE_RESOURCE_GROUP}
+          az webapp show --name $AZURE_WEBAPP_NAME --resource-group $AZURE_RESOURCE_GROUP
           echo "Web App properties:"
           echo "-----------------"
           echo "${OUTPUT}"
