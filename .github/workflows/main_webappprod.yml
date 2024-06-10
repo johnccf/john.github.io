@@ -68,10 +68,13 @@ jobs:
 
       - name: Check Web App properties
         run: |
-          az webapp show --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }}
+          az webapp show --name ${AZURE_WEBAPP_NAME} --resource-group ${AZURE_RESOURCE_GROUP}
           echo "Web App properties:"
           echo "-----------------"
           echo "${OUTPUT}"
+        env:
+          AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
+          AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
