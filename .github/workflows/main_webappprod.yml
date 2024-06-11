@@ -68,8 +68,8 @@ jobs:
 
       - name: Check Web App properties
         env:
-          AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
-          AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+          AZURE_WEBAPP_NAME: webappprod
+          AZURE_RESOURCE_GROUP: webappprod_group
         run: |
           az webapp show --name ${{AZURE_WEBAPP_NAME}} --resource-group ${{AZURE_RESOURCE_GROUP}}
           echo "Web App properties:"
