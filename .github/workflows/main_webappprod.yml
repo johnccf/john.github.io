@@ -57,9 +57,9 @@ jobs:
 
       - name: Print secrets
         run: |
-          echo "AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}"
-          echo "AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}"
-          echo "AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}"
+          ::echo::AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+          ::echo::AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
+          ::echo::AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
       
 
       - name: Login to Azure
