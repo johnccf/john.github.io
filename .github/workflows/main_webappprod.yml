@@ -59,7 +59,7 @@ jobs:
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          auth-type: 'service-principal'
+          auth-type: 'service_principal'
           resourceManagerEndpoint: 'https://management.azure.com/'
 
       - name: 'Deploy to Azure Web App'
