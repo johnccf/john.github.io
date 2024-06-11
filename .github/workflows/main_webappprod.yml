@@ -84,3 +84,14 @@ jobs:
           run: |
            echo "Deployment to Azure Web App successful"
 
+      - name: Check deployment status
+        run: |
+          status=$(echo "${{ steps.deploy.outputs.deployment_status }}" | tr '[:upper:]' '[:lower:]')
+          if [ "$status" != "success" ]; then
+            echo "Deployment failed with status: $status"
+            exit 1
+          fi
+          echo "Deployment successful!"
+
+          
+
