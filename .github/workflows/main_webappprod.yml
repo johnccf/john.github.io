@@ -59,9 +59,11 @@ jobs:
           run: |
            echo "Artifact downloaded successfully"
 
-      - name: Unzip artifact for deployment
+      - name: Unzip artifact
         run: unzip webappprod.zip
-         echo "Artifact unzipped successfully"
+
+      - name: Print success message
+        run: echo "Artifact unzipped successfully"
 
       - name: Login to Azure
         uses: azure/login@v2
