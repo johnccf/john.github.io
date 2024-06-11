@@ -53,14 +53,7 @@ jobs:
           name: node-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
-
-      - name: Print secrets
-        run: |
-          ::echo::AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-          ::echo::AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
-          ::echo::AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
-      
+        run: unzip release.zip      
 
       - name: Login to Azure
         uses: azure/login@v2
