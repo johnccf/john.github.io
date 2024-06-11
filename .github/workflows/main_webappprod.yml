@@ -86,12 +86,10 @@ jobs:
 
       - name: Check deployment status
         run: |
-          status=${steps.deploy-to-webapp.outputs.deployment_result}
-          if [ "$status" = "Success" ]; then
+          echo "Status: ${{ steps.deploy-to-webapp.outputs.deployment_result }}"
+          if [ "${{ steps.deploy-to-webapp.outputs.deployment_result }}" = "Success" ]; then
             echo "Deployment successful!"
           else
-            echo "Deployment failed with status: $status"
+            echo "Deployment failed with status: ${{ steps.deploy-to-webapp.outputs.deployment_result }}"
           fi
-
-          
 
