@@ -58,9 +58,10 @@ jobs:
           name: node-app
           run: |
            echo "Artifact downloaded successfully"
+           path:./node-app
 
       - name: Unzip artifact
-        run: unzip webappprod.zip
+        run: unzip./node-app/webappprod.zip
 
       - name: Print success message
         run: echo "Artifact unzipped successfully"
@@ -80,7 +81,7 @@ jobs:
         with:
           app-name: 'webappprod'
           resource-group: 'webappprod_group'
-          package: '${{ github.workdir }}/webappprod.zip'
+          package: './node-app/webappprod.zip'
       
       - name: Check deployment status
         run: |
