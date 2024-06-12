@@ -84,7 +84,7 @@ jobs:
       
       - name: Check deployment status
         run: |
-          if [ "${steps.deploy-to-webapp.outputs.deployment_state}" = "success" ]; thenn
+          if [ "${steps.deploy-to-webapp.outputs.deployment_state}" = "success" ]; then
             echo "Deployment successful!"
           else
            echo "Deployment failed"
