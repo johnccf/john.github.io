@@ -81,12 +81,12 @@ jobs:
           app-name: 'webappprod'
           resource-group: 'webappprod_group'
           package: '${{ github.workspace }}/webappprod.zip'
-
+      
       - name: Check deployment status
         run: |
-          if [ "${{ steps.deploy-to-webapp.outputs.deployment.complete }}" = "true" ]; then
-            echo "Deployment successful!"
+          if [ "${steps.deploy-to-webapp.outputs.deployment.complete}" = "true" ]; then
+             echo "Deployment successful!"
           else
-            echo "Deployment failed"
-            echo "Deployment logs: ${{ steps.deploy-to-webapp.outputs.deployment.log_url }}"
+             echo "Deployment failed"
+             echo "Deployment logs: ${steps.deploy-to-webapp.outputs.deployment.log_url}"
           fi
