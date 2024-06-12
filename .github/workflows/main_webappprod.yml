@@ -79,7 +79,7 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'webappprod'
-          resource-group: 'webappprod_group'
+          resource-group-name: 'webappprod_group'
           package: './webappprod.zip'
       
       - name: Check deployment status
