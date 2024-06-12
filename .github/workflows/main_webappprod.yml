@@ -69,7 +69,7 @@ jobs:
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          auth-type: 'service_principal'
+          auth-type: 'ervice_principal'
           resourceManagerEndpoint: 'https://management.azure.com/'
           run: |
            echo "Logged in to Azure successfully"
@@ -84,11 +84,9 @@ jobs:
 
       - name: Check deployment status
         run: |
-          echo "Status: ${{ steps.deploy-to-webapp.outputs.deploymentResult }}"
-          if [ "${{ steps.deploy-to-webapp.outputs.deploymentResult }}" = "Success" ]; then
+          if [ "${{ steps.deploy-to-webapp.outputs.deployment.complete }}" = "true" ]; then
             echo "Deployment successful!"
           else
-            echo "Deployment failed with status: ${{ steps.deploy-to-webapp.outputs.deploymentResult }}"
-            echo "Deployment logs: ${{ steps.deploy-to-webapp.outputs.deploymentLogs }}"
+            echo "Deployment failed"
+            echo "Deployment logs: ${{ steps.deploy-to-webapp.outputs.deployment.log_url }}"
           fi
-
