@@ -80,7 +80,7 @@ jobs:
         with:
           app-name: 'webappprod'
           resource-group: 'webappprod_group'
-          package: '${{ github.workspace }}/webappprod.zip'
+          package: '${{ github.workdir }}/webappprod.zip'
       
       - name: Check deployment status
         run: |
