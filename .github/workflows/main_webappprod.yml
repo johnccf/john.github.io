@@ -87,13 +87,15 @@ jobs:
       
       - name: Check deployment status
         run: |
-         deployment_state=${{ github.steps.deploy-to-webapp.outputs.deployment_state }} || 'unknown'
-         deployment_log_url=${{ github.steps.deploy-to-webapp.outputs.deployment_log_url }} || 'not available'
+          echo "## Outputs:"
+          echo "${steps.deploy-to-webapp.outputs}"
+          deployment_state=${steps.deploy-to-webapp.outputs.deployment_state} || 'unknown'
+          deployment_log_url=${steps.deploy-to-webapp.outputs.deployment_log_url} || 'not available'
           echo "Deployment state: $deployment_state"
           echo "Deployment log URL: $deployment_log_url"
-         if [ "$deployment_state" = "success" ]; then
+          if [ "$deployment_state" = "success" ]; then
           echo "Deployment successful!"
-         else
+          else
           echo "Deployment failed"
           echo "Deployment logs: $deployment_log_url"
-         fi
+          fi
