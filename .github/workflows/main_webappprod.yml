@@ -74,6 +74,9 @@ jobs:
           run: |
            echo "Logged in to Azure successfully"
 
+      - name: Wait for 30 seconds to avoid SCM container restart
+        run: sleep 30
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
