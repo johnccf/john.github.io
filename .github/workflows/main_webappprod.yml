@@ -84,11 +84,11 @@ jobs:
       
       - name: Check deployment status
         run: |
-          echo "Deployment state: ${steps.deploy-to-webapp.outputs.deployment_state}"
-          echo "Deployment log URL: ${steps.deploy-to-webapp.outputs.deployment_log_url}"
-          if [ "${steps.deploy-to-webapp.outputs.deployment_state}" = "success" ]; then
+          echo "Deployment state: ${steps.deploy-to-webapp.outputs.deployment_state || 'unknown'}"
+          echo "Deployment log URL: ${steps.deploy-to-webapp.outputs.deployment_log_url || 'not available'}"
+          if [ "${steps.deploy-to-webapp.outputs.deployment_state || 'failed'}" = "success" ]; then
             echo "Deployment successful!"
           else
             echo "Deployment failed"
-            echo "Deployment logs: ${steps.deploy-to-webapp.outputs.deployment_log_url}"
+            echo "Deployment logs: ${steps.deploy-to-webapp.outputs.deployment_log_url || 'not available'}"
           fi
