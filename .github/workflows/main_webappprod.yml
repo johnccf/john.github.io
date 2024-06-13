@@ -79,8 +79,8 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'webappprod'
-          resource-group-name: 'webappprod_group'
-          package: './webappprod.zip'
+          resource-group: 'webappprod_group'
+          package: '${{ github.workspace }}/webappprod.zip'
       
       - name: Check deployment status
         run: |
