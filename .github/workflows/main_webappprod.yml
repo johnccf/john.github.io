@@ -88,9 +88,3 @@ jobs:
           app-name: 'webappprod'
           resource-group: 'webappprod_group'
           package: '${{ github.workspace }}/webappprod.zip'
-          
-      - name: 'Start Azure Web App'
-        uses: azure/azure-webapps-start@v2
-        with:
-          app-name: webappprod
-          resource-group-name: webappprod_group
