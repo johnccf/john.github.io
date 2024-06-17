@@ -40,5 +40,12 @@
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "20.x"
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "REACT_APP_API_URL": "https://your-api-url.com"
+  }
 }
