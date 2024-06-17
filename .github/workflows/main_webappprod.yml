@@ -40,7 +40,10 @@ jobs:
           rm -rf webapp/build
 
       - name: Zip only necessary files
-        run: zip webappprod.zip webapp/build/* -r
+        run: |
+          zip -r webappprod.zip webapp/build/*
+      - name: Print success message
+        run: |
           echo "Artifact zipped successfully"
 
       - name: Upload artifact for deployment job
