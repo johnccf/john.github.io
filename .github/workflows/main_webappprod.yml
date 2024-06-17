@@ -86,5 +86,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'webappprod'
-          resource-group: 'webappprod_group'
           package: '${{ github.workspace }}/webappprod.zip'
