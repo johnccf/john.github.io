@@ -33,6 +33,11 @@ jobs:
           npm ci
           npm run build --if-present
           npm run test --if-present
+          
+      - name: Copy build artifacts to root directory
+        run: |
+          mkdir -p webapp/build && cp -R webapp/build/* webapp/
+          rm -rf webapp/build
 
       - name: Zip only necessary files
         run: zip webappprod.zip webapp/* -r
