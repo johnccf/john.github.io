@@ -30,7 +30,7 @@ jobs:
       - name: npm ci and build
         run: |
           cd webapp
-          npm ci
+          npm install
           npm run build --if-present
           npm run test --if-present
           
@@ -42,8 +42,6 @@ jobs:
       - name: Zip only necessary files
         run: |
           zip -r webappprod.zip webapp/build/*
-      - name: Print success message
-        run: |
           echo "Artifact zipped successfully"
 
       - name: Upload artifact for deployment job
